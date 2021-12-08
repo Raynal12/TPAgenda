@@ -12,7 +12,7 @@ public class Event {
     /**
      * The starting time of the event
      */
-    private LocalDateTime myStart;
+    public LocalDateTime start;
 
     /**
      * The durarion of the event 
@@ -29,7 +29,7 @@ public class Event {
      */
     public Event(String title, LocalDateTime start, Duration duration) {
         this.myTitle = title;
-        this.myStart = start;
+        this.start = start;
         this.myDuration = duration;
     }
 
@@ -55,7 +55,7 @@ public class Event {
      * @return the myStart
      */
     public LocalDateTime getStart() {
-        return myStart;
+        return start;
     }
 
 
