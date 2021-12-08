@@ -11,6 +11,8 @@ import java.time.temporal.ChronoUnit;
  */
 public class FixedTerminationEvent extends RepetitiveEvent {
 
+    private LocalDate terminationInclusive;
+    private long numberOfOccurences;
     
     /**
      * Constructs a fixed terminationInclusive event ending at a given date
@@ -29,8 +31,7 @@ public class FixedTerminationEvent extends RepetitiveEvent {
     public FixedTerminationEvent(String title, LocalDateTime start, Duration duration, ChronoUnit frequency, LocalDate terminationInclusive) {
          super(title, start, duration, frequency);
         // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
-
+        this.terminationInclusive = terminationInclusive;
     }
 
     /**
@@ -50,7 +51,7 @@ public class FixedTerminationEvent extends RepetitiveEvent {
     public FixedTerminationEvent(String title, LocalDateTime start, Duration duration, ChronoUnit frequency, long numberOfOccurrences) {
         super(title, start, duration, frequency);
         // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        this.numberOfOccurences = numberOfOccurences;
     }
 
     /**
@@ -59,12 +60,18 @@ public class FixedTerminationEvent extends RepetitiveEvent {
      */
     public LocalDate getTerminationDate() {
         // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");   
+        LocalDate datefin = start.toLocalDate().plus(getNumberOfOccurrences(), frequency);
+        return datefin;
     }
 
     public long getNumberOfOccurrences() {
         // TODO : implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        long nbOccurences = 0;
+        //long joursEntre = ChronoUnit.DAYS.between(start.toLocalDate(), terminationInclusive);
+        while ( ((start.toLocalDate().plus(nbOccurences, frequency) ).isBefore(terminationInclusive)) || ((start.toLocalDate().plus(nbOccurences, frequency) ).isEqual(terminationInclusive)) ) {
+            nbOccurences++;
+        }
+        return nbOccurences;
     }
         
 }
