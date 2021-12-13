@@ -88,4 +88,10 @@ public class Event {
     public Duration getDuration() {
         return myDuration;
     }
+
+    @Override
+    public String toString() {
+        return "Event{" + "myTitle=" + myTitle + ", start=" + start + ", myDuration=" + myDuration + '}';
+    }
+    
 }
