@@ -11,6 +11,13 @@ public class Agenda {
     public ArrayList<Event> agenda = new ArrayList<>();
     public Event event;
 
+    public Agenda() {
+        this.event = event;
+        this.agenda = agenda;
+    }
+    
+    
+
     /**
      * Adds an event to this agenda
      *
