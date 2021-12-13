@@ -44,16 +44,26 @@ public class Event {
     public boolean isInDay(LocalDate aDay) {
         // TODO : implémenter cette méthode
         boolean b = false;
-        long duree = myDuration.toDays();
-        if ((this.getStart().toLocalDate().plusDays(duree).isAfter(aDay)) && (this.getStart().toLocalDate().isBefore(aDay))) {
+        long duree = myDuration.toMinutes();
+        if (((this.getStart().plusMinutes(duree)).toLocalDate().isAfter(aDay)) && (this.getStart().toLocalDate().isBefore(aDay))) {
                 b = true;
         }
-        else if (this.getStart().toLocalDate().plusDays(duree).isEqual(aDay)) {
+        else if ((this.getStart().plusMinutes(duree)).toLocalDate().isEqual(aDay)) {
                 b = true;
         }
         else if (this.getStart().toLocalDate().isEqual(aDay)) {
                 b = true;
         }
+        
+//        if ((this.getStart().toLocalDate().plusDays(duree).isAfter(aDay)) && (this.getStart().toLocalDate().isBefore(aDay))) {
+//                b = true;
+//        }
+//        else if (this.getStart().toLocalDate().plusDays(duree).isEqual(aDay)) {
+//                b = true;
+//        }
+//        else if (this.getStart().toLocalDate().isEqual(aDay)) {
+//                b = true;
+//        }
         return b;
     }
    
