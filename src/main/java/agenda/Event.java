@@ -1,3 +1,4 @@
+
 package agenda;
 
 import java.time.*;
@@ -77,7 +78,4 @@ public class Event {
     public Duration getDuration() {
         return myDuration;
     }
-
-   
-    
 }
