@@ -12,7 +12,8 @@ public class Event {
     /**
      * The starting time of the event
      */
-    public LocalDateTime start;
+
+    protected LocalDateTime start;
 
     /**
      * The durarion of the event 
