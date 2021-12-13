@@ -38,7 +38,7 @@ public class RepetitiveEvent extends Event {
     public void addException(LocalDate date) {
         // TODO : implémenter cette méthode
 //        throw new UnsupportedOperationException("Pas encore implémenté");
-        if(start.toLocalDate().equals(date)) 
+//        if(start.toLocalDate().equals(date)) 
     }
 
     /**
