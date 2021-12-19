@@ -94,4 +94,5 @@ public class Event {
         return "Event{" + "myTitle=" + myTitle + ", start=" + start + ", myDuration=" + myDuration + '}';
     }
     
+
 }

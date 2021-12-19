@@ -35,9 +35,19 @@ public class RepetitiveEvent extends Event {
      *
      * @param date the event will not occur at this date
      */
-    public void addException(LocalDate date) {
-        // TODO : implémenter cette méthode
-//        throw new UnsupportedOperationException("Pas encore implémenté");
+
+    public void addException(LocalDate date) throws Exception {
+        
+        
+        long j = frequency.DAYS.between((start.toLocalDate()), date);
+        j= Math.abs(j);
+        
+              
+        while( (start.toLocalDate().plus(j, frequency)).isEqual(date) || (start.toLocalDate().plus(j, frequency)).isBefore(date) ){
+            if((start.toLocalDate().plus(j, frequency)).isEqual(date)){
+                throw new Exception("L'évenement n'a pas lieu à cette date ! ");
+            }
+        }
         
     }
 
