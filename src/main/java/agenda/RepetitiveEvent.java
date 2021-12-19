@@ -52,7 +52,7 @@ public class RepetitiveEvent extends Event {
 
     /**
      *
-     * @return the type of repetition
+     * @return the type of repetition 
      */
     public ChronoUnit getFrequency() {
         return frequency;    
