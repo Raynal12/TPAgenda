@@ -45,7 +45,7 @@ public class RepetitiveEvent extends Event {
 //              
 //        while( (start.toLocalDate().plus(j, frequency)).isEqual(date) || (start.toLocalDate().plus(j, frequency)).isBefore(date) ){
 //            if((start.toLocalDate().plus(j, frequency)).isEqual(date)){
-//                throw new Exception("L'évenement n'a pas lieu à cette date ! ");
+//                throw new Exception("L'évenement n'a pas lieu à cette date !");
 //            }
 //        }
         
