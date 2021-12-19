@@ -55,8 +55,7 @@ public class FixedTerminationEvent extends RepetitiveEvent {
         this.numberOfOccurences = numberOfOccurences;
         this.terminationInclusive = terminationInclusive;
     }
-
-    /**
+   /**
      *
      * @return the termination date of this repetitive event
      */
@@ -65,15 +64,16 @@ public class FixedTerminationEvent extends RepetitiveEvent {
         LocalDate datefin = start.toLocalDate().plus(getNumberOfOccurrences(), frequency);
         return datefin;
     }
+   
 
     public long getNumberOfOccurrences() {
         // TODO : implémenter cette méthode
         long nbOccurences = 0;
         //long joursEntre = ChronoUnit.DAYS.between(start.toLocalDate(), terminationInclusive);
-        while ( ((start.plus(nbOccurences, frequency) ).isBefore(terminationInclusive)) || ((start.toLocalDate().plus(nbOccurences, frequency) ).isEqual(terminationInclusive)) ) {
+        while ( ((start.toLocalDate().plus(nbOccurences, frequency)).isBefore(terminationInclusive)) || ((start.toLocalDate().plus(nbOccurences, frequency) ).isEqual(terminationInclusive)) ) {
             nbOccurences++;
         }
         return nbOccurences;
     }
-        
+      
 }
