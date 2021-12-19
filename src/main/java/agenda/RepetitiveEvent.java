@@ -10,6 +10,7 @@ import java.time.temporal.ChronoUnit;
 public class RepetitiveEvent extends Event {
     
     protected ChronoUnit frequency;
+   
     
     /**
      * Constructs a repetitive event
@@ -64,5 +65,4 @@ public class RepetitiveEvent extends Event {
         return frequency;    
     }
 
-    
 }
