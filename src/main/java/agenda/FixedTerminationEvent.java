@@ -68,9 +68,9 @@ public class FixedTerminationEvent extends RepetitiveEvent {
 
     public long getNumberOfOccurrences() {
         // TODO : implémenter cette méthode
-        long nbOccurences = 1;
+        long nbOccurences = 0;
         //long joursEntre = ChronoUnit.DAYS.between(start.toLocalDate(), terminationInclusive);
-        while ( ((start.toLocalDate().plus(nbOccurences, frequency)).isBefore(terminationInclusive)) || ((start.toLocalDate().plus(nbOccurences, frequency) ).isEqual(terminationInclusive)) ) {
+        while ( ((start.toLocalDate().plus(nbOccurences, frequency)).isBefore(terminationInclusive)) || ((start.toLocalDate().plus(nbOccurences , frequency) ).isEqual(terminationInclusive)) ) {
             nbOccurences++;
         }
         return nbOccurences;

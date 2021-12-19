@@ -11,6 +11,8 @@ public class RepetitiveEvent extends Event {
     
     protected ChronoUnit frequency;
     protected ArrayList<LocalDate> lesExceptions = new ArrayList<LocalDate>();
+
+    
     /**
      * Constructs a repetitive event
      *
@@ -48,7 +50,7 @@ public class RepetitiveEvent extends Event {
 //                throw new Exception("L'évenement n'a pas lieu à cette date !");
 //            }
 //        }
-        
+  
 //        long nb = 0;
 //        while( !(start.toLocalDate().plus(nb, frequency)).isEqual(date)){
 //            nb = nb +1;
