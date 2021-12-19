@@ -65,4 +65,34 @@ public class RepetitiveEvent extends Event {
         return frequency;    
     }
 
+    public boolean isInDay(LocalDate aDay) {
+        boolean resultat = false;
+        
+        if (super.isInDay(aDay)) {
+            resultat = true;
+            return resultat;
+        }
+        int annee = start.getYear();
+        int mois = start.getMonthValue();
+        int jour = start.getDayOfMonth();
+        
+        while (aDay.isAfter(LocalDate.of(annee, mois, jour))) {
+            if (super.isInDay(LocalDate.of(annee, mois, jour))) {
+                resultat = true;
+                return resultat;
+            }
+            else {
+                if (ChronoUnit.MONTHS==frequency) {
+                    mois = mois + 1;
+                }
+                if (ChronoUnit.WEEKS==frequency) {
+                    jour = jour + 7;
+                }
+                if (ChronoUnit.DAYS==frequency) {
+                    jour = jour + 1;
+                }
+            }
+        }
+        return resultat;
+    }
 }

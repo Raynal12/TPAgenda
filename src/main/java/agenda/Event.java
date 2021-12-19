@@ -42,7 +42,14 @@ public class Event {
      * @return true if the event occurs on that day, false otherwise
      */
     public boolean isInDay(LocalDate aDay) {
-        // TODO : implémenter cette méthode
+        
+//        boolean isinday = false;
+//        if (aDay.equals(start) || (start.plus(myDuration).toLocalDate().equals(aDay))) {
+//            isinday = true;
+//        }
+//        return isinday;
+        
+//         TODO : implémenter cette méthode
         boolean b = false;
         long duree = myDuration.toMinutes();
         if (((this.getStart().plusMinutes(duree)).toLocalDate().isAfter(aDay)) && (this.getStart().toLocalDate().isBefore(aDay))) {
