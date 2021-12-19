@@ -35,19 +35,25 @@ public class RepetitiveEvent extends Event {
      *
      * @param date the event will not occur at this date
      */
+
     public void addException(LocalDate date) throws Exception {
         
         
-        long j = frequency.DAYS.between((start.toLocalDate()), date);
-        j= Math.abs(j);
+//        long j = frequency.DAYS.between((start.toLocalDate()), date);
+//        j= Math.abs(j);
+//        start.toLocalDate().plus(j, frequency)
+//              
+//        while( (start.toLocalDate().plus(j, frequency)).isEqual(date) || (start.toLocalDate().plus(j, frequency)).isBefore(date) ){
+//            if((start.toLocalDate().plus(j, frequency)).isEqual(date)){
+//                throw new Exception("L'évenement n'a pas lieu à cette date ! ");
+//            }
+//        }
         
-              
-        while( (start.toLocalDate().plus(j, ChronoUnit.DAYS)).isEqual(date) || (start.toLocalDate().plus(j, ChronoUnit.DAYS)).isBefore(date) ){
-            if((start.toLocalDate().plus(j, ChronoUnit.DAYS)).isEqual(date)){
-                throw new Exception("L'évenement n'a pas lieu à cette date ! ");
-            }
+        long nb = 0;
+        while( !(start.toLocalDate().plus(nb, frequency)).isEqual(date)){
+            nb = nb +1;
         }
-        
+        throw new Exception("L'évenement n'a pas lieu à cette date ! ");
     }
 
     /**
@@ -58,4 +64,5 @@ public class RepetitiveEvent extends Event {
         return frequency;    
     }
 
+    
 }
