@@ -39,7 +39,7 @@ public class FixedTerminationEventTest {
         assertEquals(termination, fixedRepetitions.getTerminationDate(), "Cet événement doits se terminer le 3 janvier");
     }
     
-    /*@Test
+    /*@Test 
     public void eventIsInItsStartDay() {
         assertTrue(fixedTermination.isInDay(nov_1_2020), "Un événement a lieu dans son jour de début");
         assertTrue(fixedRepetitions.isInDay(nov_1_2020), "Un événement a lieu dans son jour de début");
