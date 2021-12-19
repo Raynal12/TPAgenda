@@ -42,8 +42,8 @@ public class RepetitiveEvent extends Event {
         j= Math.abs(j);
         
               
-        while( (start.toLocalDate().plus(j, frequency)).isEqual(date) || (start.toLocalDate().plus(j, frequency)).isBefore(date) ){
-            if((start.toLocalDate().plus(j, frequency)).isEqual(date)){
+        while( (start.toLocalDate().plus(j, ChronoUnit.DAYS)).isEqual(date) || (start.toLocalDate().plus(j, ChronoUnit.DAYS)).isBefore(date) ){
+            if((start.toLocalDate().plus(j, ChronoUnit.DAYS)).isEqual(date)){
                 throw new Exception("L'évenement n'a pas lieu à cette date ! ");
             }
         }
