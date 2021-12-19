@@ -61,7 +61,7 @@ public class FixedTerminationEvent extends RepetitiveEvent {
      */
     public LocalDate getTerminationDate() {
         // TODO : implémenter cette méthode
-        LocalDate datefin = start.toLocalDate().plus(getNumberOfOccurrences(), frequency);
+        LocalDate datefin = start.toLocalDate().plus(getNumberOfOccurrences()-2, frequency);
         return datefin;
     }
    
