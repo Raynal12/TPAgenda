@@ -50,7 +50,7 @@ public class RepetitiveEvent extends Event {
 //            }
 //        }
         
-        long nb = 0;
+       long nb = 0;
         while( !(start.toLocalDate().plus(nb, frequency)).isEqual(date)){
             nb = nb +1;
         }
